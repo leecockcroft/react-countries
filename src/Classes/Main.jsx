@@ -16,7 +16,8 @@ this.state={
 data:[],
 overlay:[],
 displayOverLay:false,
-searchText:""
+searchText:"",
+darkLight:false
 }
 
 
@@ -60,15 +61,21 @@ displayOverLay:false
 
 change=(e)=>{
 console.log(e.target.value)
-let x = this.state.filterData.filter(item => item.region.includes(e.target.value));
-if(x.length >0){
 
-this.setState({
 
-data:x
 
-})
 }
+
+changeRegion=(e)=>{
+  let filterRegion = this.state.filterData.filter(item => item.region.includes(e.target.value));
+  if(filterRegion.length >0){
+
+  this.setState({
+
+  data:filterRegion
+
+  })
+  }
 
 
 }
@@ -82,6 +89,28 @@ data:x
 // }
 // }
 
+changeFilter=(e)=>{
+  console.log(e.target.value)
+let x = this.state.filterData.filter(item => item.region.includes(e.target.value));
+if(x.length>0){
+this.setState({
+
+data:x
+
+})
+
+}
+
+
+}
+changeCss=()=>{
+  this.setState({
+darkLight:!this.state.darkLight,
+
+
+
+  })
+}
 
   render() {
 
@@ -89,11 +118,16 @@ const style={
   display:'none'
 }
 
+const dark={
+  background:'black',
+  color:'#fff'
+}
+
     return (
-      <div id="wrapper"  >
+      <div id="wrapper" style={this.state.darkLight?{background:'black',color:'#fff'} :{background:'hsl(0, 0%, 98%)'}}  >
       <div className='container'>
-      <Header/>
-        <SearchBar change={this.change}/>
+      <Header changeCss={this.changeCss} bool={this.state.darkLight}/>
+        <SearchBar change={this.test} changeFilter={this.test}/>
             <div className='main'style={this.state.displayOverLay ?{display:'none'}  : {color:'block'}}>
 
             <Countries countries={this.state.data} handler={this.handler}/>

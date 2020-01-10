@@ -1,9 +1,12 @@
 #wrapper{
 
-background: hsl(0, 0%, 98%)
+background: hsl(0, 0%, 98%);
+font-family: 'Nunito Sans', sans-serif;
 
 }
-
+.header-text{
+  color:#000 !important;
+}
 .container{
   width:1440px;
   margin:auto;
@@ -13,6 +16,9 @@ background: hsl(0, 0%, 98%)
   width:25%;
 }
 
+option{
+  font-size:2em
+}
 .main{
   display:flex;
   flex-wrap: wrap;
@@ -61,6 +67,7 @@ header{
   height:10vh;
   background:#fff;
   display:flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom:3em;
 }
