@@ -127,7 +127,7 @@ const dark={
       <div id="wrapper" style={this.state.darkLight?{background:'black',color:'#fff'} :{background:'hsl(0, 0%, 98%)'}}  >
       <div className='container'>
       <Header changeCss={this.changeCss} bool={this.state.darkLight}/>
-        <SearchBar change={this.test} changeFilter={this.test}/>
+        <SearchBar change={this.changeFilter} changeFilter={this.changeFilter}/>
             <div className='main'style={this.state.displayOverLay ?{display:'none'}  : {color:'block'}}>
 
             <Countries countries={this.state.data} handler={this.handler}/>

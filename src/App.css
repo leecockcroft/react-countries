@@ -31,6 +31,13 @@ img{
 .over{
   display:none;
 }
+.over button{
+  margin-bottom: 2em;
+padding: 1.1em;
+font-size: 1.2em;
+width: 6.4em;
+border-radius: 10%;
+}
 
 
 .overlay-wrapper{

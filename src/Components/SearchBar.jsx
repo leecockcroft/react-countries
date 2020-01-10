@@ -9,7 +9,7 @@ return (
 <select className="search-filter" onChange={props.changeFilter}>
   <option disabled selected >Select your option</option>
 <option value='Africa'>Africa</option>
-<option value='Amercia'>America</option>
+<option value='Americas'>America</option>
 <option value='Asia'>Asia</option>
 <option value='Europe'>Europe</option>
 </select>
